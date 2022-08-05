@@ -1,0 +1,36 @@
+{
+    "msg": "查询成功",
+    "code": 0,
+    "data": {
+        "firstStatus": {
+            1: {
+                "notEvaluateNums": 1,
+                "wish": 1
+            },
+            3: {
+                "notEvaluateNums": 1,
+                "wish": 3
+            }
+        },
+        "thirdStatus": {
+            1: {
+                "notEvaluateNums": 1,
+                "wish": 1
+            },
+            3: {
+                "notEvaluateNums": 1,
+                "wish": 3
+            }
+        },
+        "secondStatus": {
+            1: {
+                "notEvaluateNums": 1,
+                "wish": 1
+            },
+            3: {
+                "notEvaluateNums": 1,
+                "wish": 3
+            }
+        }
+    }
+}

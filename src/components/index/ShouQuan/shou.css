@@ -1,0 +1,12 @@
+.shouquan-wrapper {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.empty-wrapper {
+    height: 80%;
+    display: grid;
+    place-content: center;
+}

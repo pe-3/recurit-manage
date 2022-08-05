@@ -1,0 +1,124 @@
+.index-page {
+    height: 100vh;
+    background-image: url(../../assets/img/logback.jpeg);
+    padding: 4vh 6vw;
+}
+
+
+.index-main {
+    height: 100%;
+    padding-top: 10px;
+}
+
+.menu-wrapper {
+    display: grid;
+    place-content: center;
+}
+
+.content-wrapper {
+    height: calc(100% - 43px);
+    padding: 44px;
+}
+
+.logo {
+    height: 44px;
+}
+
+.logo>img {
+    height: 44px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 6rem;
+    padding-right: 12rem;
+}
+
+.logo-text {
+    font-weight: bold;
+}
+
+.signout {
+    position: absolute;
+    right: 50px;
+}
+
+.head {
+    position: relative;
+}
+
+.info-item {
+    height: 60px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(50, 49, 48);
+}
+
+.info-item-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(96, 94, 92);
+}
+
+.info-item-val {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(50, 49, 48);
+}
+
+.info-item-edit {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(0, 111, 201);
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info-item-wrapper {
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.comment-item {
+    display: block;
+    height: fit-content;
+}
+
+.comment-val {
+    height: 62px;
+    padding: 5px;
+    padding-left: 0;
+    background-color: rgb(230 230 230);
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.comment-val::first-letter {
+    margin-left: 2rem;
+}
+
+.pass {
+    color: rgb(168, 203, 116);
+}
+
+.notPass {
+    color: rgb(238, 44, 44);
+}
+
+.daiDin {
+    color: #108dff;
+}

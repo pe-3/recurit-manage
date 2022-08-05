@@ -1,0 +1,162 @@
+.Interview {
+    height: 100%;
+    text-align: left;
+}
+
+.userid-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.more-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100% - 32px);
+}
+
+.more-input>div {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.head-title {
+    position: relative;
+}
+
+/* .head-title::before {
+    background-color: #ff4e6a;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 2rem;
+    border-radius: 1px;
+    position: absolute;
+    top: 100%;
+} */
+
+.input-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 2rem;
+    margin-top: 10px;
+}
+
+.textarea-item {
+    padding: 5px 2rem;
+    margin-top: 10px;
+}
+
+.textarea-text {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.radio-item {
+    padding: 5px 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.list-show {
+    border-right: 1px solid #eee;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.list-item:hover {
+    background-color: rgb(240 220 200);
+}
+
+.evaluate {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.btn-item {
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 2rem;
+}
+
+.list-head,
+.list-item {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 1rem;
+    cursor: pointer;
+}
+
+
+.chakan {
+
+    padding-left: 1.2rem;
+    color: #008dff;
+    cursor: pointer;
+}
+
+.pagi-wrapper {
+    margin-top: 20px;
+}
+
+.list-wrapper {
+    padding: 15px 0;
+    height: calc(100% - 35.74px - 42px - 32px - 52px);
+    overflow: auto;
+}
+
+.icon-shengxu {
+    color: #008dff;
+    cursor: pointer;
+}
+
+.icon-quxiaodingdanxiao {
+    color: rgb(228, 61, 61);
+
+    cursor: pointer;
+}
+
+.infoPop {
+    padding: 20px;
+}
+
+.infoPop {
+    width: 200px;
+}
+
+.infoPop>p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.infoPop>p>span:nth-child(2) {
+    width: 5rem;
+}
+
+.icon-nv {
+    color: #fb7299;
+}
+
+.icon-nan {
+    color: #008dff;
+}
+
+.show-info {
+    overflow: auto;
+    height: 100%;
+}
+
+
+
+.no-data {
+    display: grid;
+    place-content: center;
+}
