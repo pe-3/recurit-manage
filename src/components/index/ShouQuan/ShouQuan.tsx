@@ -74,7 +74,6 @@ export default class ShouQuan extends Component {
             }
         })
     }
-
     changeAuth = () => {
         let { userid } = this.state;
         if (!userid) {
@@ -93,7 +92,6 @@ export default class ShouQuan extends Component {
             }
         })
     }
-
     delInterView = () => {
         let { userid } = this.state;
         if (!userid) {
@@ -112,7 +110,6 @@ export default class ShouQuan extends Component {
             }
         })
     }
-
     sign = () => {
         acat.sign().then(() => {
             let { msg, code } = acat.getData('sign');

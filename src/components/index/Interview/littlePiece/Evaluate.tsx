@@ -1,4 +1,4 @@
-import { Button, Input, message, Radio, Select } from 'antd'
+import { Button, Input, message, Popconfirm, Radio, Select } from 'antd'
 import React, { useEffect, useState } from 'react'
 import acat from '../../../../req/requests';
 import { infoProps } from './funcs';
@@ -8,9 +8,7 @@ import { transPass, passTrans } from './funcs';
 const { Option } = Select;
 const { TextArea } = Input;
 
-
 const Evaluate: React.FC<infoProps> = (props) => {
-
 
     let isFirstFinish: boolean = false;
     let { first_ability, first_attitude, first_interview, first_interviewer, first_remarks, first_ispass } = props.infoData;
@@ -92,7 +90,6 @@ const Evaluate: React.FC<infoProps> = (props) => {
         }
     }
 
-
     const submit = () => {
         acat.evaluate({
             data: {
@@ -109,10 +106,12 @@ const Evaluate: React.FC<infoProps> = (props) => {
         }).then(() => {
             let { msg, code } = acat.getData('evaluate');
             if (!code) {
+                window.location.reload();
                 return message.success(msg);
             }
             message.error(msg);
         })
+
     }
 
     const changeHandler = (func: any, tans?: any) => {
@@ -197,7 +196,9 @@ const Evaluate: React.FC<infoProps> = (props) => {
                 </div>
             </div>
             <div className="btn-item">
-                <Button style={btnStyle} onClick={submit} >提交</Button>
+                <Popconfirm onConfirm={submit} title='确认提交' okText='确认' cancelText='取消'>
+                    <Button style={btnStyle}>提交</Button>
+                </Popconfirm>
             </div>
         </div>
     )

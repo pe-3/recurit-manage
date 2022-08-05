@@ -26,6 +26,8 @@ const ListShow: React.FC<Props> = (props) => {
 
     let timer: any;
 
+    let [listSize, setSize] = useState(200);
+
     function getList(isAlert?: boolean) {
         acat.queryInview({
             data: {
@@ -45,6 +47,7 @@ const ListShow: React.FC<Props> = (props) => {
             if (!code) {
                 console.log(data)
                 setList(data.info);
+                setSize(data.listSize);
             } else {
                 // message.info('登录过期，重新登录');
                 props.setLogin(false);
@@ -56,7 +59,6 @@ const ListShow: React.FC<Props> = (props) => {
         })
     }
 
-
     let canSend = true;
 
     useEffect(() => {
@@ -66,7 +68,6 @@ const ListShow: React.FC<Props> = (props) => {
         canSend = false;
         getList();
     }, [])
-
 
     return (
         <div className='list-show'>
@@ -122,7 +123,7 @@ const ListShow: React.FC<Props> = (props) => {
                         return (
                             <Tooltip title='点击查看信息' key={i} placement='right'>
                                 <div className="list-item" onClick={() => {
-                                    props.jumpInfo(val.userid, val);
+                                    props.jumpInfo(val);
                                 }}>
                                     <span>{val.name}</span>
                                     <span className='userid'>{val.userid}</span>
@@ -150,17 +151,16 @@ const ListShow: React.FC<Props> = (props) => {
                                     </div>
                                     <Button onClick={(e) => {
                                         e.stopPropagation();
-                                        props.jumpInfo(val.userid, val, 'evaluate');
+                                        props.jumpInfo(val, 'evaluate');
                                     }}>开始面试</Button>
                                 </div>
                             </Tooltip>
-
                         )
                     })
                 }
             </div>
             <div className="pagi-wrapper">
-                <Pagination total={200} defaultCurrent={1} pageSize={limit} pageSizeOptions={[5, 10, 20, 50, 100]} onChange={(p, pageSize) => {
+                <Pagination total={listSize} defaultCurrent={1} pageSize={limit} pageSizeOptions={[5, 10]} onChange={(p, pageSize) => {
                     page = p;
                     setLimit(pageSize);
                     setTimeout(() => {

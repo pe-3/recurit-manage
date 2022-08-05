@@ -9,6 +9,7 @@ import { Props, NoData, dataType } from './littlePiece/funcs';
 import './interview.css'
 
 export default class Interview extends Component<Props, object> {
+
     state: Readonly<{ render: 'showInfo' | 'evaluate' | 'empty', infoData: dataType }> = {
         render: 'empty',
         infoData: {
@@ -19,16 +20,18 @@ export default class Interview extends Component<Props, object> {
             major: '',
         }
     };
-    jumpInfo = (userid: string, val: any, path?: 'showInfo' | 'evaluate' | 'empty') => {
+
+    jumpInfo = (val: any, path?: 'showInfo' | 'evaluate' | 'empty') => {
+
         acat.getOtherInf({
             params: {
-                userid,
+                userid: val.userid,
             }
         }).then(() => {
             let { code, msg, data } = acat.getData('getOtherInf');
             if (!code) {
+                console.log(val);
                 let oldData = Object.assign(val, data);
-
                 acat.queryInview({
                     data: {
                         similarName: val.name,
@@ -44,7 +47,6 @@ export default class Interview extends Component<Props, object> {
                 }).then(() => {
                     let { code, msg, data } = acat.getData('queryInview');
                     if (!code) {
-                        console.log(Object.assign(oldData, data[0]));
                         this.setState({
                             infoData: Object.assign(oldData, data[0]),
                             render: path ? path : 'showInfo',
@@ -57,11 +59,11 @@ export default class Interview extends Component<Props, object> {
                 message.info(msg);
             }
         })
+        
     }
+
     render() {
-
         let { render } = this.state;
-
         return (
             <div className='Interview'>
                 <div className="more-input">

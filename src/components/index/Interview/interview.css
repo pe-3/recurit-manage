@@ -101,10 +101,6 @@
     cursor: pointer;
 }
 
-.pagi-wrapper {
-    margin-top: 20px;
-}
-
 .list-wrapper {
     padding: 15px 0;
     height: calc(100% - 35.74px - 42px - 32px - 52px);
